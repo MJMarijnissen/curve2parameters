@@ -32,3 +32,6 @@ train_accuracy = model.score(DataTrain, ParametersTrain)
 test_accuracy = model.score(DataTest, ParametersTest)
 
 print(f"train accuracy:  {train_accuracy} , test accuracy:  {test_accuracy}")
+
+#predict = model.predict(DataPredict)
+#print(predict)
