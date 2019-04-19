@@ -24,7 +24,10 @@ Data, Parameters = shuffle(Data, Parameters)
 DataTrain, ParametersTrain = Data[:7000], Parameters[:7000]
 DataTest, ParametersTest = Data[7000:], Parameters[7000:]
 
-model = MLPRegressor(hidden_layer_sizes=(1,100), activation='relu', max_iter=2000)
+model = MLPRegressor(hidden_layer_sizes=(1,100), 
+                     activation='relu', 
+                     max_iter=20000, 
+                     learning_rate_init = 0.00001)
 
 model.fit(DataTrain, ParametersTrain)
 
