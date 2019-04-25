@@ -16,8 +16,10 @@ import matplotlib.pyplot as plt
 Data = pd.read_csv("curves.csv", header = None)
 Data.drop(columns=101, inplace=True)
 Data.drop(index=0, inplace=True)
+#Data = Data.T
 
 Parameters = pd.read_csv("curvesParameters.csv", header = None)
+#Parameters = Parameters.T
 
 Data, Parameters = shuffle(Data, Parameters)
 
@@ -36,5 +38,9 @@ test_accuracy = model.score(DataTest, ParametersTest)
 
 print(f"train accuracy:  {train_accuracy} , test accuracy:  {test_accuracy}")
 
-#predict = model.predict(DataPredict)
-#print(predict)
+from prep_experm_data import read_data
+
+DataPredict = read_data()
+#print(DataPredict[1])
+predict = model.predict(DataPredict.iloc[[1]])
+print(predict)
