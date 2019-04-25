@@ -24,7 +24,7 @@ def normalize(data):
 def read_data():
     exp = pd.read_csv("exp0_test0.csv", header = None)
     exp = exp.T
-    exp = normalize(exp)
+    #exp = normalize(exp)
     return exp
         
 

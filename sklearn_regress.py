@@ -52,3 +52,7 @@ plt.plot(x, label="predicted")
 plt.plot(DataEXP.iloc[1], label="experiment")
 plt.legend(loc='best')
 plt.show()
+
+"""TO DO: 
+    -Metric measuring the distance between the 2 curves
+    -Automated sampling of experimental data""" 
