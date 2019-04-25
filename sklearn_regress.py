@@ -38,9 +38,17 @@ test_accuracy = model.score(DataTest, ParametersTest)
 
 print(f"train accuracy:  {train_accuracy} , test accuracy:  {test_accuracy}")
 
-from prep_experm_data import read_data
+from prep_experm_data import read_data, generate_function
 
-DataPredict = read_data()
+DataEXP = read_data()
 #print(DataPredict[1])
-predict = model.predict(DataPredict.iloc[[1]])
+predict = model.predict(DataEXP.iloc[[1]])
 print(predict)
+
+x=generate_function(predict[0][0], predict[0][1],predict[0][2])
+
+plt.figure(1)
+plt.plot(x, label="predicted")
+plt.plot(DataEXP.iloc[1], label="experiment")
+plt.legend(loc='best')
+plt.show()

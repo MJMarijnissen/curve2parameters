@@ -27,5 +27,9 @@ def read_data():
     exp = normalize(exp)
     return exp
         
+
+def generate_function(K,eps,n):
+    x = np.arange(0,1.01,0.01)
+    return K*(eps + x)**n
 #plt.plot(exp[1])
 #plt.show()
